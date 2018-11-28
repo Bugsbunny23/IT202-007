@@ -1,0 +1,110 @@
+<meta charset='UTF-8' >
+<span id="demo"></span>
+<input type= checkbox checked = "checked" name="checkbox" id="Stopauto">
+ <script type="text/javascript">Stopauto
+ 	"user strict"
+ 	var timer1;
+ 	var timer2;
+ 	var timer3;
+ 	var d, dsec;
+
+ 	
+ 	document.addEventListener("click", resetTimer); //triggers at click
+
+ 	var ptrbox = document.getElementById("Stopauto");
+
+ 	
+
+
+
+ 	function resetTimer() {
+
+	
+ 	//This refers to the entire browser screen
+ 	// 	if(ptrbox.checked){
+
+ 	// 	return;
+ 	// };
+ 		d = new Date();
+ 		dsec = d.getSeconds();
+ 		document.getElementById("demo").innerHTML = dsec 
+ 		clearTimeout(timer1); //Clearing the orginal timer. The first time the will run but the code will not work
+
+
+		//Starting the timing monitoring
+ 		alert("Starting the timing monitoring");
+
+ 		timer1=setTimeout(logout, 12000); //schedules logout, 
+
+ 		//first warning
+ 		timer2 = setTimeout(inactive, 4000);
+
+
+ 		
+
+
+ 	}
+
+ 	function inactive(){
+
+ 		alert("You have been inactive for 4 seconds. Transfering to another page unless you click on the page.");
+
+
+ 		//if user clicks on page reset timer.
+ 		if(document.addEventListener("click", resetTimer)){
+
+ 			resetTimer();
+ 		}
+ 		else{
+
+ 			timer3 = setTimeout(finalWarning, 3000);
+ 		}
+
+
+ 	function	finalWarning(){
+
+ 				alert("This is your final Warning! Click on the page on else I will log you out.");
+
+ 		//if user clicks on page reset timer.
+ 		if(document.addEventListener("click", resetTimer)){
+
+ 			resetTimer();
+ 		}
+ 		else{
+
+ 			//Calling logout page. 
+ 			timer3 = setTimeout(logout, 3000);
+ 		}
+
+
+ 	}
+
+
+ 	}
+
+ 	function logout(){
+
+
+ 	// 	if(!confirm("Do you want to logout?")){
+ 	// 		return;
+		// }; 	
+
+
+
+
+ 		
+
+
+
+ 	// 	if(ptrbox.checked){
+ 	// 	alert("Auto-shutdown stopped.");
+ 	// 	document.getElementById("demo").innerHTML = "Auto-shutdown - stopped"
+ 	// 	return;
+ 	// 	};
+
+ 	// 	if(!confirm("Do you want to logout?")){
+ 	// 		return;
+		// }; 	
+		window.location.href ='exiting-logout.html';
+}
+ </script>
