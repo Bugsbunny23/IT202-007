@@ -1,0 +1,21 @@
+<meta charset='UTF-8' >
+<span id="demo"></span>
+ <script type="text/javascript">
+ 	"user strict"
+ 	var timer1;
+ 	var d, dsec;
+
+ 	doucument.addEventListener("click", resetTimer); //triggers at click
+
+ 	function resetTimer() {
+ 		d = new Date();
+ 		dsec = d.getSeconds();
+ 		document.getElemntById("demo").innerHTML = dsec 
+ 		clearTimeout(timer1); //Clearing the orginal timer. The first time the code works it will not run.
+ 		timer1=setTimeout(logout, 4000); //schedules logout, uncancellable
+ 	}
+
+ 	function logout(){
+ 		window.location.href ='exiting-logout.html';
+ 	}
+ </script>
